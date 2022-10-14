@@ -3,5 +3,5 @@ document.addEventListener("DOMContentLoaded", function() {
 	let a = [1, 2]
 	let b = 2 ** 3
 	console.log(a, b)
-	para.textContent = 'Hello, friends'
+	para.textContent = 'Hello, friends! This is a complete change!'
 })

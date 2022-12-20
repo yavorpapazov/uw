@@ -45,11 +45,14 @@ document.addEventListener("DOMContentLoaded", function() {
 						imageEl.src = reviews[i].multimedia.src
 					}
 					summaryBtn = document.createElement('button')
-					summaryBtn.textContent = 'Show summary'
-					summaryBtn.classList.add('show-summary')
+					summaryBtn.textContent = 'Summary'
+					summaryBtn.classList.add('summary')
 					let summaryEl = document.createElement('p')
 					summaryEl.textContent = reviews[i].summary_short
 					summaryEl.classList.add('hide')
+					summaryBtn.addEventListener('click', () => {
+						summaryEl.classList.toggle('hide')
+					})
 					let readReviewEl = document.createElement('a')
 					readReviewEl.textContent = reviews[i].link.suggested_link_text
 					readReviewEl.href = reviews[i].link.url
@@ -104,12 +107,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		if(!queryEl.validity.valueMissing && startDate && endDate && inputElStart.validity.valid && inputElEnd.validity.valid) {
 			URL = `${BASE_URL}?query=${query}&publication-date=${startDate}:${endDate}&api-key=${API_KEY}`
 			getReviews(query)
-		}
-	})
-	divElReviews.addEventListener('click', e => {
-		if(e.target.tagName === 'BUTTON' && e.target.nextElementSibling.tagName === 'P') {
-			e.target.nextElementSibling.classList.toggle('hide')
-			summaryBtn.textContent = e.target.nextElementSibling.classList.contains('hide') ? 'Show summary' : 'Hide summary'
 		}
 	})
 	clearBtn.addEventListener('click', () => {

@@ -27,7 +27,7 @@ input {
 .movie-reviews-form {
 	margin-bottom: 20px;
 }
-#submit, #clear, .show-summary {
+#submit, #clear, .summary {
 	border-radius: 5px;
 	padding: 5px 10px;
 	margin-bottom: 10px;

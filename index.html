@@ -2,11 +2,65 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Example</title>
-    <script src="./myApp.js"></script>
+    <title>Movie Reviews</title>
+    <link 
+      rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+      crossorigin="anonymous"
+    >
+    <script src="./main-example.js"></script>
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <h3 class="h3"></h3>
+    <div class="container">
+      <div class="message-container">
+        <h4>Welcome to the Movie Reviews web page!</h4>
+        <h4>Please note that all form fields are required.</h4>
+        <h4>Thank you!</h4>
+        <p>Message will disappear in <span id="message">5 seconds.</span></p>
+      </div>
+      <h1>Movie Reviews</h1>
+      <form class="movie-reviews-form" novalidate>
+        <div class="form-divs">
+          <label for="query">Movies query:</label>
+          <br>
+          <input 
+            id="query"
+            name="query"
+            type="text"
+            required
+          />
+          <span id="queryError"></span>
+        </div>
+        <div class="form-divs">
+          <label for="start-date">Publication date - start:</label>
+          <br>
+          <input 
+            id="start-date"
+            name="start-date"
+            type="date"
+            required
+          />
+          <span id="startDateError"></span>
+        </div>
+        <div class="form-divs">
+          <label for="end-date">Publication date - end:</label>
+          <br>
+          <input 
+            id="end-date"
+            name="end-date"
+            type="date"
+            required
+          />
+          <span id="endDateError"></span>
+        </div>
+        <div>
+          <input id="submit" type="submit" value="Get Reviews" />
+        </div>
+      </form>
+      <button id="clear">Clear Storage</button>
+      <div class="reviews-container"></div>
+    </div>
   </body>
 </html>
